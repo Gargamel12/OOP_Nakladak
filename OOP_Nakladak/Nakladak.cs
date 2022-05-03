@@ -29,24 +29,35 @@ namespace OOP_Nakladak
 
         public void Jet(int Vzdalenost) 
         {
-        if (Vzdalenost)
-            {
 
+        }
+        public void Naloz(int Nalozeni)
+        {
+            
+            if (Nalozeno > Nosnost)
+            {
+                Nalozeno = Nosnost;
+            }
+            if (Nalozeno < 0)
+            {
+                Nalozeno = 0;
             }
         }
-        public void Naloz()
+        public void Vyloz(int vylozeni)
         {
 
+            if (Nalozeno < 0) ;
         }
-        public void Tankovat()
+        public void Tankovat(int palivo)
         {
-            Palivo += input;
+
+            Palivo += palivo;
             if (Palivo > ObjemNadrz)
             {
                 Palivo = ObjemNadrz;
             }
         }
-        public
+        
     }
     
 }

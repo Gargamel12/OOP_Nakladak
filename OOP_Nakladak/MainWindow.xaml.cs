@@ -22,6 +22,8 @@ namespace OOP_Nakladak
     {
         Nakladak Tatra;
         Nakladak Zetor;
+       
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -31,23 +33,67 @@ namespace OOP_Nakladak
             Zetor = new Nakladak(1000, 220, 32);
             Zetor.Znacka = "Zetor";
 
-            kamion1.Text = Tatra.Znacka + "\n";
-            kamion1.Text = "Nosnost" +  Tatra.Nosnost + "\n";
-            kamion1.Text = "Naloženo" + Tatra.Nalozeno + "\n";
-            kamion1.Text = "Objem Nádrž" + Tatra.ObjemNadrz + "\n";
-            kamion1.Text = "Spotřeba" + Tatra.Spotreba + "\n";
-            kamion1.Text = "Nosnost" + Tatra.Nosnost + "\n";
+            Vypis();
+
+        }
+        public void Vypis()
+        {
+            kamion1.Text += Tatra.Znacka + "\n";
+            kamion1.Text += "Nosnost" + " " + Tatra.Nosnost + "\n";
+            kamion1.Text += "Naloženo" + " " + Tatra.Nalozeno + "\n";
+            kamion1.Text += "Objem Nádrž" + "" + Tatra.ObjemNadrz + "\n";
+            kamion1.Text += "Spotřeba" + " " + Tatra.Spotreba + "\n";
+            kamion1.Text += "Vzdálenost" + " " + Tatra.Vzdalenost + "\n";
+            kamion1.Text += "Palivo" + " " + Tatra.Palivo + "\n";
+
+            kamion2.Text += Zetor.Znacka + "\n";
+            kamion2.Text += "Nosnost" + " " + Zetor.Nosnost + "\n";
+            kamion2.Text += "Naloženo" + "" + Zetor.Nalozeno + "\n";
+            kamion2.Text += "Objem Nádrž" + " " + Zetor.ObjemNadrz + "\n";
+            kamion2.Text += "Spotřeba" + " " + Zetor.Spotreba + "\n";
+            kamion2.Text += "Vzdálenost" + " " + Zetor.Vzdalenost + "\n";
+            kamion2.Text += "Palivo" + " " + Zetor.Palivo + "\n";
+        }
 
 
 
+        private void Nacepovat_Click(object sender, RoutedEventArgs e)
+        {
+            Tatra.Tankovat(int.Parse(input1.Text)); 
+            Vypis();
+        }
+        private void Nacepovat2_Click(object sender, RoutedEventArgs e)
+        {
+            Zetor.Tankovat(int.Parse(input2.Text));
+            Vypis();
+        }
 
 
+        private void Jet_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Nalozit_Click(object sender, RoutedEventArgs e)
         {
-            Tatra.Naložit
+            Tatra.Naloz(int.Parse(input1.Text));
+            Vypis();
+        }
+
+        private void Vylozit2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Vylozit_Click(object sender, RoutedEventArgs e)
+        {
+            Tatra.Vyloz(int.Parse(input2.Text));
+            Vypis();
+        }
+
+        private void Nalozit2_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
