@@ -8,17 +8,6 @@ namespace OOP_Nakladak
 {
     public class Nakladak
     {
-        public Nakladak(int nosnost, int objem,  int spotreba )
-        {
-            Znacka = "";
-            Nosnost = nosnost;
-            Nalozeno = 0;
-            ObjemNadrz = objem;
-            Palivo = 0;
-            Spotreba = spotreba;
-            Vzdalenost = 0;
-        }
-
         public string Znacka { get; set; }
         public int Nosnost { get; set; }
         public int Nalozeno { get; set; }
@@ -26,27 +15,42 @@ namespace OOP_Nakladak
         public int Palivo { get; set; }
         public int Spotreba { get; set; }
         public int Vzdalenost { get; set; }
+        public Nakladak(int nosnost, int objem,  int spotreba )
+        {
+             Znacka = "";
+            Nosnost = nosnost;
+            Nalozeno = 0;
+            ObjemNadrz = objem;
+            Palivo = 1100;
+            Spotreba = spotreba;
+            Vzdalenost = 0;
+        }
+
+        
 
         public void Jet(int Vzdalenost) 
         {
-
+            if (((((Vzdalenost / 100 * Spotreba)) + (25 * (Nalozeno / Nosnost))) < Palivo))
+            {
+                Palivo -= ((((Vzdalenost / 100) * Spotreba)) + (25 * (Nalozeno / Nosnost)));
+            }
         }
         public void Naloz(int Nalozeni)
         {
-            
-            if (Nalozeno > Nosnost)
+
+            Nalozeni += Nalozeno;
+            if (Nalozeni > Nosnost)
             {
-                Nalozeno = Nosnost;
-            }
-            if (Nalozeno < 0)
-            {
-                Nalozeno = 0;
+                Nalozeni = Nosnost;
             }
         }
         public void Vyloz(int vylozeni)
         {
-
-            if (Nalozeno < 0) ;
+            Nalozeno -= vylozeni;
+            if (Nalozeno > Nosnost)
+            {
+                Nalozeno = 0;
+            }
         }
         public void Tankovat(int palivo)
         {

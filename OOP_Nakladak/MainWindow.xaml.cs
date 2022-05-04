@@ -28,9 +28,10 @@ namespace OOP_Nakladak
         {
             InitializeComponent();
 
-            Tatra = new Nakladak(1000, 200 , 30);
+            Tatra = new Nakladak(10000, 1300 , 30);
             Tatra.Znacka = "Tatra";
-            Zetor = new Nakladak(1000, 220, 32);
+            
+            Zetor = new Nakladak(10000, 1100, 32);
             Zetor.Znacka = "Zetor";
 
             Vypis();
@@ -38,21 +39,21 @@ namespace OOP_Nakladak
         }
         public void Vypis()
         {
-            kamion1.Text += Tatra.Znacka + "\n";
+            kamion1.Text = Tatra.Znacka + "\n";
             kamion1.Text += "Nosnost" + " " + Tatra.Nosnost + "\n";
-            kamion1.Text += "Naloženo" + " " + Tatra.Nalozeno + "\n";
-            kamion1.Text += "Objem Nádrž" + "" + Tatra.ObjemNadrz + "\n";
-            kamion1.Text += "Spotřeba" + " " + Tatra.Spotreba + "\n";
-            kamion1.Text += "Vzdálenost" + " " + Tatra.Vzdalenost + "\n";
+            kamion1.Text += "Naložení" + " " + Tatra.Nalozeno + "\n";
+            kamion1.Text += "Spotreba" + " " + Tatra.Spotreba + "\n";
+            kamion1.Text += "ObjemNadrze" + " " + Tatra.ObjemNadrz + "\n";
             kamion1.Text += "Palivo" + " " + Tatra.Palivo + "\n";
+            kamion1.Text += "Vzdálenost" + " " + Tatra.Vzdalenost + "\n";
 
-            kamion2.Text += Zetor.Znacka + "\n";
+            kamion2.Text = Zetor.Znacka + "\n";
             kamion2.Text += "Nosnost" + " " + Zetor.Nosnost + "\n";
-            kamion2.Text += "Naloženo" + "" + Zetor.Nalozeno + "\n";
-            kamion2.Text += "Objem Nádrž" + " " + Zetor.ObjemNadrz + "\n";
-            kamion2.Text += "Spotřeba" + " " + Zetor.Spotreba + "\n";
-            kamion2.Text += "Vzdálenost" + " " + Zetor.Vzdalenost + "\n";
+            kamion2.Text += "Naložení" + " " + Zetor.Nalozeno + "\n";
+            kamion2.Text += "Spotreba" + " " + Zetor.Spotreba + "\n";
+            kamion2.Text += "ObjemNadrze" + " " + Zetor.ObjemNadrz + "\n";
             kamion2.Text += "Palivo" + " " + Zetor.Palivo + "\n";
+            kamion2.Text += "Vzdálenost" + " " + Zetor.Vzdalenost + "\n";
         }
 
 
@@ -71,7 +72,8 @@ namespace OOP_Nakladak
 
         private void Jet_Click(object sender, RoutedEventArgs e)
         {
-
+            Tatra.Jet(int.Parse(input1.Text));
+            Vypis();
         }
 
         private void Nalozit_Click(object sender, RoutedEventArgs e)
@@ -82,18 +84,26 @@ namespace OOP_Nakladak
 
         private void Vylozit2_Click(object sender, RoutedEventArgs e)
         {
-
+            Zetor.Vyloz(int.Parse(input2.Text));
+            Vypis();
         }
 
         private void Vylozit_Click(object sender, RoutedEventArgs e)
         {
-            Tatra.Vyloz(int.Parse(input2.Text));
+            Tatra.Vyloz(int.Parse(input1.Text));
             Vypis();
         }
 
         private void Nalozit2_Click(object sender, RoutedEventArgs e)
         {
+            Zetor.Naloz(int.Parse(input2.Text));
+            Vypis();
+        }
 
+        private void Jet2_Click(object sender, RoutedEventArgs e)
+        {
+            Zetor.Jet(int.Parse(input2.Text));
+            Vypis();
         }
     }
 }

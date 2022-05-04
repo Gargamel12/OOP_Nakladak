@@ -12,7 +12,7 @@
         <Button x:Name="Nacepovat" Content="Načepovat" HorizontalAlignment="Left" Height="36" Margin="178,302,0,0" VerticalAlignment="Top" Width="79" Click="Nacepovat_Click"/>
         <Button x:Name="Vylozit" Content="Vyložit" HorizontalAlignment="Left" Height="36" Margin="10,343,0,0" VerticalAlignment="Top" Width="79" Click="Vylozit_Click"/>
         <Button x:Name="Nalozit2" Content="Naložit" HorizontalAlignment="Left" Height="36" Margin="545,302,0,0" VerticalAlignment="Top" Width="79" Click="Nalozit2_Click"/>
-        <Button x:Name="Jet2" Content="Jet" HorizontalAlignment="Left" Height="36" Margin="629,302,0,0" VerticalAlignment="Top" Width="79"/>
+        <Button x:Name="Jet2" Content="Jet" HorizontalAlignment="Left" Height="36" Margin="629,302,0,0" VerticalAlignment="Top" Width="79" Click="Jet2_Click"/>
         <Button x:Name="Nacepovat2" Content="Načepovat" HorizontalAlignment="Left" Height="36" Margin="713,302,0,0" VerticalAlignment="Top" Width="79" Click="Nacepovat2_Click"/>
         <Button x:Name="Vylozit2" Content="Vyložit" HorizontalAlignment="Left" Height="36" Margin="545,343,0,0" VerticalAlignment="Top" Width="79" Click="Vylozit2_Click"/>
         <TextBlock x:Name="kamion2" TextWrapping="Wrap" Margin="545,10,8,156"/>
