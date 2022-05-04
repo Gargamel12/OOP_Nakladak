@@ -73,6 +73,7 @@ namespace OOP_Nakladak
         private void Jet_Click(object sender, RoutedEventArgs e)
         {
             Tatra.Jet(int.Parse(input1.Text));
+            Tatra.Jezdit(int.Parse(input1.Text));
             Vypis();
         }
 
@@ -103,6 +104,7 @@ namespace OOP_Nakladak
         private void Jet2_Click(object sender, RoutedEventArgs e)
         {
             Zetor.Jet(int.Parse(input2.Text));
+            Zetor.Jezdit(int.Parse(input2.Text));
             Vypis();
         }
     }
